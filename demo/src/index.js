@@ -27,7 +27,10 @@ class ReactTrixEditorDemo extends Component {
 
     const testProps = {
       onChange: this.onChange,
-      onEditor(editor) { console.log(`Editor callback: `, editor); },
+      onEditor(editor, _, Trix) {
+        console.log(`Editor callback: `, editor);
+        console.log(`Trix: `, Trix);
+      },
       initialValue: 'Hello World',
       placeholder: 'A placeholder shown when the text editor is empty'
     };
@@ -36,7 +39,7 @@ class ReactTrixEditorDemo extends Component {
 
     return (
       <div>
-        <h1>react-trix-editor Demo</h1>
+        <h1>React-Trix-Editor Demo</h1>
         <ReactTrixEditor {...testProps} />
       </div>
     );
